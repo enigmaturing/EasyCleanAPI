@@ -43,5 +43,17 @@ namespace EasyClean.Controllers
             db.SaveChanges();
             return StatusCode(HttpStatusCode.Created);
         }
+
+        public IEnumerable<EndClient> Get()
+        {
+            var latestUsers = db.EndClients.OrderByDescending(user => user.DateOfBirth);
+            return latestUsers;
+        }
+
+        public IEnumerable<EndClient> Get(string userSurname)
+        {
+            var usersWithGivenSurname = db.EndClients.Where(user => user.UserSurname.StartsWith(userSurname));
+            return usersWithGivenSurname;
+        }
     }
 }
