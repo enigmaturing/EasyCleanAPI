@@ -14,6 +14,7 @@ using EasyClean.Models;
 
 namespace EasyClean.Controllers
 {
+    [Authorize]
     public class EndClientsController : ApiController
     {
         private ApplicationDbContext db = new ApplicationDbContext();
