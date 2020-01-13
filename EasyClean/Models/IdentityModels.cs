@@ -29,5 +29,7 @@ namespace EasyClean.Models
         {
             return new ApplicationDbContext();
         }
+
+        public System.Data.Entity.DbSet<EasyClean.Models.EndClient> EndClients { get; set; }
     }
 }
